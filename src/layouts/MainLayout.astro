@@ -27,12 +27,8 @@ export interface Props {
   </head>
   <body>
     <Navbar
-      client:visible
-      className={pathname === "/paket" ||
-      pathname === "/faq" ||
-      pathname === "/about"
-        ? "bg-teal-900"
-        : ""}
+      client:load
+      className={pathname === "/" ? "" : "bg-teal-900"}
       paddingTop={pathname === "/" ? "pt-8" : ""}
     />
     <div class:list={["mt-20", { hidden: pathname === "/" }]}></div>
