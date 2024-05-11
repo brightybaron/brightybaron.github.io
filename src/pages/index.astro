@@ -1,0 +1,47 @@
+---
+import Card from "../components/Card.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout title="Home">
+  <section
+    class="h-screen bg-cover bg-no-repeat bg-center"
+    style="background-image : linear-gradient(180deg, rgba(1, 1, 1, 0.5) 0%, rgba(0, 0, 0, 0.4) 25%, rgba(255, 255, 255, 0) 100%), url('/images/hero1.png')"
+  >
+    <div
+      class="relative sm:ml-auto sm:mr-0 sm:right-[10%] sm:text-end mx-auto top-[30%] w-fit text-stone-200"
+    >
+      <p class="mb-0">Lorem, ipsum dolor.</p>
+      <p class="font-bold text-2xl mb-3">Lorem ipsum dolor sit.</p>
+      <p class="mb-0">Lorem ipsum dolor sit amet consectetur.</p>
+    </div>
+  </section>
+  <section class="container py-8">
+    <p class="text-3xl font-semibold text-center my-4">Lorem ipsum</p>
+    <div class="grid sm:grid-cols-3 grid-cols-1 justify-center">
+      <div class="p-4 text-center">
+        <i class="bi bi-luggage-fill text-6xl"></i>
+        <p class="font-bold mt-4 mb-2 text-2xl">Lorem ipsum</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam rem laboriosam nemo, consequuntur commodi porro!</p>
+      </div><div class="p-4 text-center">
+        <i class="bi bi-luggage-fill text-6xl"></i>
+        <p class="font-bold mt-4 mb-2 text-2xl">Lorem ipsum</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam rem laboriosam nemo, consequuntur commodi porro!</p>
+      </div><div class="p-4 text-center">
+        <i class="bi bi-luggage-fill text-6xl"></i>
+        <p class="font-bold mt-4 mb-2 text-2xl">Lorem ipsum</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam rem laboriosam nemo, consequuntur commodi porro!</p>
+      </div>
+    </div>
+  </section>
+  <section class="sm:bg-fixed bg-scroll bg-cover bg-no-repeat bg-center h-[500px] bg-[url('/images/hero1.png')]"></section>
+  <section class="container py-8">
+    <p class="text-3xl font-semibold text-center my-4">Lorem ipsum</p>
+    <div class="grid sm:grid-cols-2 grid-cols-1 justify-center gap-2">
+      <Card link="/paket/bromo" Img="/images/bromo1.jpg" title="Bromo Midnight Trip" price="285.000" durasi={1}/> 
+      <Card link="/paket/tumpaksewu" Img="/images/tumpaksewu.jpg" title="Air Terjun Tumpak Sewu" price="285.000" durasi={1}/>
+    </div>
+    <button class="bg-teal-800 text-white rounded font-semibold mt-4 px-4 py-2 hover:bg-teal-700">
+      <i class="bi bi-chevron-right"></i>Paket Lainnya</button>
+  </section>
+</MainLayout>

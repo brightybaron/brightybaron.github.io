@@ -1,0 +1,18 @@
+---
+import Card from "../../components/Card.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+---
+
+<MainLayout title="Paket">
+    <p class="text-3xl font-semibold text-center mb-4">Paket Trip</p>
+    <section class="container">
+        <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-3">
+            <Card link="/paket/bromo" Img="/images/bromo1.jpg" title="Bromo Midnight Trip" price="285.000" durasi={1}/>
+            <Card link="/paket/tumpaksewu" Img="/images/tumpaksewu.jpg" title="Air Terjun Tumpak Sewu" price="285.000" durasi={1}/>
+            <Card link="/paket/tumpakbromo" Img="/images/tumpaksewu.jpg" title="Tumpak Sewu & Bromo Midnight" price="285.000" durasi={2}/>
+            <Card link="/paket/ijen" Img="/images/ijen1.jpg" title="Explore Kawah Ijen" price="285.000" durasi={1}/>
+            <Card link="/paket/ijenbaluran" Img="/images/baluran.jpg" title="TN Baluran & Kawah Ijen" price="285.000" durasi={2}/>
+        </div>
+    </section>
+</MainLayout>
+

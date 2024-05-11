@@ -1,0 +1,42 @@
+---
+import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.astro";
+const { pathname } = Astro.url;
+const { title } = Astro.props;
+export interface Props {
+  title: string;
+}
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/logo2.png" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <title>{title} | Badak Gunung</title>
+    <style>
+      body {
+        height: 2000px;
+      }
+    </style>
+  </head>
+  <body>
+    <Navbar
+      client:load
+      className={pathname === "/paket" ||
+      pathname === "/faq" ||
+      pathname === "/about"
+        ? "bg-teal-900"
+        : ""}
+      paddingTop={pathname === "/" ? "pt-8" : ""}
+    />
+    <div class:list={["mt-20", { hidden: pathname === "/" }]}></div>
+    <slot />
+    <Footer />
+  </body>
+</html>

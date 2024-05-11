@@ -1,0 +1,59 @@
+---
+import Accordion from "../components/Accordion";
+import MainLayout from "../layouts/MainLayout.astro";
+const itemsFAQ = [
+  {
+    title: "Apakah ada biaya tambahan selain harga yang tertera di paket?",
+    content:
+      "Tidak ada, kami memaparkan harga yang sesungguhnya dalam layanan kami. Adapun biaya tambahan adalah biaya yang anda keluarkan untuk fasilitas tambahan di luar fasilitas yang kami berikan dan tambahan biaya pada periode high season.",
+  },
+  {
+    title: "Apakah itinerari bersifat mengikat peserta?",
+    content:
+      "Tidak, itinerari digunakan sebagai gambaran umum mengenai waktu dan destinasi yang akan dituju. Pelaksanaan itinerari sangat bergantung pada beberapa faktor seperti, kondisi alam, cuaca, kondisi lalu lintas, serta berbagai hal dapat mempengaruhi trip.",
+  },
+  {
+    title: "Bagaimana cara reservasi trip di Badak Gunung?",
+    content:
+      "Cukup mudah, isi beberapa data diri melalui formulir booking yang tertera dan selesai. Tim kami akan segera melakukan verifikasi order.",
+  },
+  {
+    title: "Bagaimana cara pembayarannya?",
+    content:
+      "Membayar uang muka/DP minimal 50% dari total tagihan ke rekening BCA - 023 999 2123 a.n Nalina Nuha Al-Hazmi atau dapat melunasinya sekaligus.",
+  },
+];
+
+const itemsTNC = [
+  {
+    title: "Ketentuan dan Syarat Pembayaran",
+    content2: [
+      "Membayar uang muka/DP minimal 50% dari total tagihan ke rekening BCA - 023 999 2123 a.n Nalina Nuha Al-Hazmi atau dapat melunasinya sekaligus",
+      "Pelunasan biaya trip dibayarkan maksimal pada hari H sebelum berangkat trip.",
+      "Badak Gunung berhak membatalkan trip dengan pertimbangan-pertimbangan tertentu di luar kemampuan kami dan uang DP peserta akan dikembalikan 100%.",
+      "Jadwal acara/itinerary bisa berubah tergantung cuaca dan kondisi alam serta kondisi lalu lintas.",
+    ],
+  },
+  {
+    title: "Pembatalan dan Reschedule",
+    content2: [
+      "Tidak ada pengembalian uang muka/DP yang sudah dibayarkan oleh peserta trip yang membatalkan keikutsertaannya secara sepihak.",
+      "Reschedule / pergantian jadwal trip diperkenankan, maksimal konfirmasi 7 hari sebelum keberangkatan. Kurang dari 7 hari peserta dianggap membatalkan trip secara sepihak.",
+      "Jika terjadi pembatalan atau pergantian tanggal trip dikarenakan force majeur seperti bencana alam, penutupan tempat wisata atau sebab lain di luar kendali kami, maka biaya pendaftaran akan dikembalikan.",
+      "Pembatalan dan penundaan trip hanya berlaku untuk jadwal trip low season.",
+      "Pembatalan/penundaan trip pada peak season, uang muka tidak dapat di-refund.",
+    ],
+  },
+];
+---
+
+<MainLayout title="FAQ">
+  <section class="container">
+    <div class="sm:mx-16">
+      <p class="text-2xl font-bold mb-2">FAQ</p>
+      <Accordion client:load items={itemsFAQ} />
+      <p class="text-2xl font-bold mt-6 mb-2">FAQ</p>
+      <Accordion client:load items={itemsTNC} />
+    </div>
+  </section>
+</MainLayout>
