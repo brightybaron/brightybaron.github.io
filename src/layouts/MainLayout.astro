@@ -33,7 +33,18 @@ export interface Props {
         : ""}
       paddingTop={listpath.includes(pathname) ? "" : "pt-8"}
     />
-    <div class={listpath.includes(pathname) ? "mt-20" : "hidden"}></div>
+    <div
+      class:list={[
+        "",
+        {
+          "mt-20":
+            pathname === "/paket" ||
+            pathname === "/faq" ||
+            pathname === "/about",
+        },
+      ]}
+    >
+    </div>
     <slot />
     <Footer />
   </body>
