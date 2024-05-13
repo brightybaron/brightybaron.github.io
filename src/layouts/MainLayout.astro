@@ -26,7 +26,11 @@ export interface Props {
   <body>
     <Navbar
       client:load
-      className={listpath.includes(pathname) ? "bg-teal-900" : ""}
+      className={pathname === "/paket" ||
+      pathname === "/faq" ||
+      pathname === "/about"
+        ? "bg-teal-900"
+        : ""}
       paddingTop={listpath.includes(pathname) ? "" : "pt-8"}
     />
     <div class={listpath.includes(pathname) ? "mt-20" : "hidden"}></div>
