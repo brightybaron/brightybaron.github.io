@@ -1,0 +1,24 @@
+---
+const { waktu } = Astro.props;
+export interface Props {
+  waktu: { mulai: string; selesai: string };
+}
+---
+
+<div class="grid sm:grid-cols-4 grid-cols-2">
+  <div class="col-span-1 font-semibold w-full">
+    <p>Kategori</p>
+    <p>Meeting Point</p>
+    <p>Waktu Mulai</p>
+    <p>Waktu Selesai</p>
+  </div>
+  <div class="sm:col-span-3 col-span-1 w-full">
+    <p>: Private Trip</p>
+    <p>: Malang Kota</p>
+    <p>: {waktu.mulai} WIB</p>
+    <p>: {waktu.selesai} WIB</p>
+  </div>
+</div>
+<div class="mt-4">
+  <slot />
+</div>

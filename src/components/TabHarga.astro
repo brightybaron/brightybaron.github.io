@@ -1,0 +1,32 @@
+---
+const { harga } = Astro.props;
+export interface Props {
+  harga: {
+    pax: string;
+    price: string;
+  }[];
+}
+---
+
+<table class="table-auto w-full text-center border border-gray-300">
+  <thead>
+    <tr>
+      <th scope="col" class="border border-gray-300 bg-gray-200"> Peserta </th>
+      <th scope="col" class="border border-gray-300 bg-gray-200"> Harga </th>
+    </tr>
+  </thead>
+  <tbody>
+    {
+      harga.map((item) => (
+        <tr>
+          <td class="border border-gray-300">{item.pax} pax</td>
+          <td class="border border-gray-300">{item.price}</td>
+        </tr>
+      ))
+    }
+  </tbody>
+</table>
+<div class="mt-4 text-end text-sm italic">
+  <p>*Harga dalam rupiah</p>
+  <p>*Lebih dari 6 orang, silakan hubungi kami</p>
+</div>

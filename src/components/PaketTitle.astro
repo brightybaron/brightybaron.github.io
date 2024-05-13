@@ -1,0 +1,21 @@
+---
+const { judul, durasi } = Astro.props;
+export interface Props {
+  judul: string;
+  durasi: string;
+}
+---
+
+<section class="container">
+  <p class="text-3xl my-4 font-bold">{judul}</p>
+  <div class="grid grid-cols-2 gap-x-3 w-[200px]">
+    <div class="flex items-center gap-1">
+      <i class="bi bi-clock"></i>
+      <p class="text-sm">{durasi || "1"} day</p>
+    </div>
+    <div class="flex items-center gap-1">
+      <i class="bi bi-calendar3"></i>
+      <p class="text-sm">Everyday</p>
+    </div>
+  </div>
+</section>

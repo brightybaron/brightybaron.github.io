@@ -1,0 +1,32 @@
+---
+const { fasilitas } = Astro.props;
+export interface Props {
+  fasilitas: {
+    inklud: string[];
+    exclude: string[];
+  };
+}
+---
+
+<div class="grid grid-cols-2 gap-2">
+  <div>
+    <p class="font-semibold text-xl mb-2 underline">Included</p>
+    <ul>
+      {
+        fasilitas.inklud.map((item) => (
+          <li class="list-disc list-inside">{item}</li>
+        ))
+      }
+    </ul>
+  </div>
+  <div>
+    <p class="font-semibold text-xl mb-2 underline">Excluded</p>
+    <ul>
+      {
+        fasilitas.exclude.map((item) => (
+          <li class="list-disc list-inside">{item}</li>
+        ))
+      }
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,113 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import PaketHero from "../components/PaketHero.astro";
+import PaketTitle from "../components/PaketTitle.astro";
+import Navtab from "../components/Navtab.astro";
+import Accordion from "../components/Accordion";
+import TabHighlight from "../components/TabHighlight.astro";
+import TabDestinasi from "../components/TabDestinasi.astro";
+import TabFasilitas from "../components/TabFasilitas.astro";
+import TabHarga from "../components/TabHarga.astro";
+
+const {
+  title,
+  bgImg,
+  durasi,
+  waktu,
+  descs,
+  destinasi,
+  fasilitas,
+  harga,
+  itin,
+} = Astro.props;
+export interface Props {
+  title: string;
+  bgImg: string;
+  durasi: string;
+  waktu: { mulai: string; selesai: string };
+  descs: string[];
+  destinasi: string[];
+  fasilitas: {
+    inklud: string[];
+    exclude: string[];
+  };
+  harga: {
+    pax: string;
+    price: string;
+  }[];
+  itin: {
+    title: string;
+    content2: string[];
+  }[];
+}
+---
+
+<MainLayout title={title}>
+  <PaketHero judul={title} bgImg={bgImg} />
+  <PaketTitle judul={title} durasi={durasi} />
+  <Navtab baseprice={harga[0].price} title={title}>
+    <!-- Tabs -->
+    <div class="mt-4 border-t border-black py-4 min-h-[250px]">
+      <div id="highlight" class="tab-pane active">
+        <TabHighlight waktu={waktu}>
+          {
+            descs
+              ? descs.map((desc) => (
+                  <p
+                    class:list={[
+                      "mb-1",
+                      { "font-semibold": desc.includes("4x4") },
+                    ]}
+                  >
+                    {desc}
+                  </p>
+                ))
+              : ""
+          }
+        </TabHighlight>
+      </div>
+      <div id="destinasi" class="tab-pane">
+        <TabDestinasi destinasi={destinasi} />
+      </div>
+      <div id="fasilitas" class="tab-pane">
+        <TabFasilitas fasilitas={fasilitas} />
+      </div>
+      <div id="harga" class="tab-pane">
+        <TabHarga harga={harga} />
+      </div>
+      <div id="itinerary" class="tab-pane">
+        <Accordion client:load items={itin} />
+        <p class="text-sm text-end italic mt-4">
+          *Hanya sebagai acuan dasar, dalam pelaksanaanya menyesuaikan dengan
+          kondisi yang ada.
+        </p>
+      </div>
+      <div id="galeri" class="tab-pane">Galeri</div>
+    </div>
+  </Navtab>
+</MainLayout>
+
+<style>
+  .tab-pane {
+    display: none;
+  }
+
+  .tab-pane.active {
+    display: block;
+  }
+</style>
+
+<script>
+  function onTabClick(event) {
+    let activeTabs = document.querySelectorAll(".active");
+    activeTabs.forEach(function (tab) {
+      tab.className = tab.className.replace("active", "");
+    });
+    event.target.parentElement.className += " active";
+    document.getElementById(event.target.id.split("-")[0]).className +=
+      " active";
+  }
+
+  const element = document.getElementById("nav-tab");
+  element.addEventListener("click", onTabClick, false);
+</script>

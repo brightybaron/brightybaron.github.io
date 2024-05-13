@@ -1,0 +1,10 @@
+---
+const { destinasi } = Astro.props;
+export interface Props {
+  destinasi: string[];
+}
+---
+
+<ul>
+  {destinasi.map((item) => <li class="list-disc list-inside">{item}</li>)}
+</ul>

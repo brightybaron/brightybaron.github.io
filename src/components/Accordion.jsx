@@ -6,7 +6,6 @@ const Accordion = ({ items }) => {
     setActiveIndex(index === activeIndex ? null : index);
   };
 
-
   return (
     <div>
       {items.map((item, index) => (
@@ -19,7 +18,9 @@ const Accordion = ({ items }) => {
               <span>{item.title}</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className={`h-6 w-6 ${index === activeIndex ? "transform rotate-180" : ""}`}
+                className={`h-6 w-6 ${
+                  index === activeIndex ? "transform rotate-180" : ""
+                }`}
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -35,16 +36,25 @@ const Accordion = ({ items }) => {
           </div>
           <div
             className={`overflow-hidden transition-all duration-500 ${
-              index === activeIndex ? "max-h-screen bg-gray-100 border" : "max-h-0"
+              index === activeIndex
+                ? "max-h-screen bg-gray-100 border"
+                : "max-h-0"
             }`}
           >
-            <div className="px-4 py-2">{item.content || item.content2.map((item, index) =>  <ol key={index} className="list-disc px-1"><li>{item}</li></ol>)}</div>
+            <div className="px-4 py-2">
+              {item.content
+                ? item.content
+                : item.content2.map((item, index) => (
+                    <ol key={index} className="list-disc px-1">
+                      <li>{item}</li>
+                    </ol>
+                  ))}
+            </div>
           </div>
         </div>
       ))}
     </div>
   );
 };
-
 
 export default Accordion;

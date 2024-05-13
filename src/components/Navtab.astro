@@ -1,0 +1,47 @@
+---
+import NavTab from "./Nav";
+
+const { baseprice, title } = Astro.props;
+export interface Props {
+  baseprice: string;
+  title: string;
+}
+
+const tabs = [
+  { name: "highlight" },
+  { name: "destinasi" },
+  { name: "fasilitas" },
+  { name: "harga" },
+  { name: "itinerary" },
+  { name: "galeri" },
+];
+---
+
+<section class="container grid sm:grid-cols-4 grid-cols-1 mt-8 gap-4">
+  <div class="col-span-3">
+    <!-- Nav -->
+    <div class="grid lg:grid-cols-6 grid-cols-3 gap-3" id="nav-tab">
+      <NavTab client:load tabs={tabs} />
+    </div>
+    <slot />
+  </div>
+  <div class="col-span-1">
+    <div
+      class="h-auto bg-white py-4 border-y-2 border-black rounded text-center"
+    >
+      <span>
+        <i class="bi bi-tag">
+          Mulai dari:&nbsp;
+          <span class="font-semibold">Rp. {baseprice}</span>
+        </i>
+      </span>
+    </div>
+    <a
+      class="inline-block text-center w-full mt-2 p-2 bg-teal-900 text-white rounded-full font-semibold"
+      href={`https://wa.me/6285157276433/?text=Hi%20Badak%20Gunung!%20Saya%20mau%20tanya%20tentang%20${title}`}
+      target="_blank"
+    >
+      <i class="bi bi-whatsapp"></i> Chat
+    </a>
+  </div>
+</section>
