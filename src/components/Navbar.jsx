@@ -19,7 +19,7 @@ const listmenu = [
   },
 ];
 
-const Navbar = ({ className, paddingTop }) => {
+const Navbar = ({ classnoHome, paddingTop }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const offcanvasRef = useRef(null);
 
@@ -54,11 +54,12 @@ const Navbar = ({ className, paddingTop }) => {
 
   const padTop = scrollPosition ? "" : paddingTop;
   const backCol = scrollPosition ? "bg-teal-900" : "";
+  // const bgnoHome = classHome;
 
   return (
     <>
       <nav
-        className={`fixed top-0 z-[1030] w-full ${backCol} ${className} transition-all duration-300 ${padTop}`}
+        className={`fixed top-0 z-[1030] w-full ${backCol} ${classnoHome} transition-all duration-300 ${padTop}`}
       >
         <div className="container mx-auto px-4 md:px-16">
           <div className="flex items-center justify-between h-16">
