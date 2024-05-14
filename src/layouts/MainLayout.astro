@@ -25,25 +25,20 @@ export interface Props {
   <body>
     <Navbar
       client:load
-      classnoHome={pathname === "/paket" ||
-      pathname === "/about" ||
-      pathname === "/faq"
-        ? "bg-teal-800"
+      notHome={pathname === "/paket" ||
+      pathname.includes("/faq") ||
+      pathname.includes("/about")
+        ? "bg-teal-900 pt-0"
         : ""}
-      paddingTop={pathname === "/paket" ||
-      pathname === "/about" ||
-      pathname === "/faq"
-        ? ""
-        : "pt-8"}
     />
     <div
       class:list={[
         "",
         {
-          "mt-20":
+          "mt-24":
             pathname === "/paket" ||
-            pathname === "/about" ||
-            pathname === "/faq",
+            pathname.includes("/faq") ||
+            pathname.includes("/about"),
         },
       ]}
     >

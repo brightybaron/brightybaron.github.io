@@ -19,7 +19,7 @@ const listmenu = [
   },
 ];
 
-const Navbar = ({ classnoHome, paddingTop }) => {
+const Navbar = ({ notHome }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const offcanvasRef = useRef(null);
 
@@ -52,14 +52,25 @@ const Navbar = ({ classnoHome, paddingTop }) => {
     };
   }, []);
 
-  const padTop = scrollPosition ? "" : paddingTop;
-  const backCol = scrollPosition ? "bg-teal-900" : "";
-  // const bgnoHome = classHome;
+  // const [notHome, setNotHome] = useState("");
+  // const location = useLocation();
+  // useEffect(() => {
+  //   const currentPath = location.pathname;
+  //   if (
+  //     currentPath === "/paket" ||
+  //     currentPath.includes("/faq") ||
+  //     currentPath.includes("/about")
+  //   ) {
+  //     setNotHome("bg-teal-900");
+  //   }
+  // }, [location]);
+
+  const backCol = scrollPosition ? "bg-teal-900" : "pt-6";
 
   return (
     <>
       <nav
-        className={`fixed top-0 z-[1030] w-full ${backCol} ${classnoHome} transition-all duration-300 ${padTop}`}
+        className={`fixed top-0 z-[1030] w-full ${backCol} ${notHome} transition-all duration-300`}
       >
         <div className="container mx-auto px-4 md:px-16">
           <div className="flex items-center justify-between h-16">
@@ -116,15 +127,23 @@ const Navbar = ({ classnoHome, paddingTop }) => {
       </nav>
       <div
         id="offcanvas"
-        className={`transition-transform duration-300 ease-linear bg-gray-900 text-white fixed top-[4rem] right-0 w-10/12 flex flex-col py-8 px-8 sm:hidden gap-y-6 rounded z-50 ${
+        className={`transition-transform duration-300 ease-linear bg-gray-900 text-white fixed top-0 left-0 w-10/12 flex flex-col py-8 px-8 sm:hidden gap-y-6 rounded z-[1035] ${
           isMenuOpen ? "visible translate-x-0" : "translate-x-[100%] invisible"
         }`}
         ref={offcanvasRef}
       >
+        <a href="/" className="flex align-middle text-white font-bold text-xl">
+          <img
+            src="/images/logo2.png"
+            alt="logo"
+            className="h-8 w-8 inline-block mx-2"
+          />
+          Badak Gunung
+        </a>
         {listmenu.map((item, index) => (
           <a
             href={item.path}
-            className="uppercase font-medium text-white text-end bg-gradient-to-r from-teal-500 to-teal-900 px-2 py-2 rounded"
+            className="uppercase font-medium text-white bg-gradient-to-r from-teal-500 to-teal-900 px-2 py-2 rounded"
             key={index}
           >
             {item.page}
