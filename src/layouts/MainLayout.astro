@@ -28,8 +28,13 @@ export interface Props {
       notHome={pathname.includes("/paket") ||
       pathname.includes("/faq") ||
       pathname.includes("/about")
-        ? "bg-teal-900 pt-0"
+        ? "bg-teal-900"
         : ""}
+      ptNotHome={pathname.includes("/paket") ||
+      pathname.includes("/about") ||
+      pathname.includes("/faq")
+        ? ""
+        : "pt-6"}
     />
     <div
       class:list={[

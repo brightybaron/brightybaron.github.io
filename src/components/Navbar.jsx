@@ -19,7 +19,7 @@ const listmenu = [
   },
 ];
 
-const Navbar = ({ notHome }) => {
+const Navbar = ({ notHome, ptNotHome }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const offcanvasRef = useRef(null);
 
@@ -36,7 +36,11 @@ const Navbar = ({ notHome }) => {
 
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [isMenuOpen]);
+  }, [offcanvasRef]);
+
+  const handleClick = () => {
+    setIsMenuOpen((prevIsMenuOpen) => !prevIsMenuOpen);
+  };
 
   // change navbar color when scrolling
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -52,14 +56,15 @@ const Navbar = ({ notHome }) => {
     };
   }, []);
 
-  const backCol = scrollPosition ? "bg-teal-900" : "pt-6";
+  const padTop = scrollPosition ? "" : ptNotHome;
+  const backCol = scrollPosition ? "bg-teal-900" : "";
 
   return (
     <>
       <nav
-        className={`fixed top-0 z-[1030] w-full ${backCol} ${notHome} transition-all duration-300`}
+        className={`fixed top-0 z-[1030] w-full ${backCol} ${notHome} ${padTop} transition-all duration-300`}
       >
-        <div className="container mx-auto px-4 md:px-16">
+        <div className="container  md:px-16">
           <div className="flex items-center justify-between h-16">
             <div className="flex-shrink-0">
               <a
@@ -89,7 +94,7 @@ const Navbar = ({ notHome }) => {
             </div>
             <div className="md:hidden">
               <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                onClick={handleClick}
                 id="toggleButton"
                 className="block lg:hidden text-white focus:outline-none"
               >
@@ -100,12 +105,21 @@ const Navbar = ({ notHome }) => {
                   stroke="currentColor"
                   className="w-6 h-6"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16m-7 6h7"
-                  ></path>
+                  {isMenuOpen ? (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  ) : (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M4 6h16M4 12h16m-7 6h7"
+                    />
+                  )}
                 </svg>
               </button>
             </div>
@@ -114,8 +128,10 @@ const Navbar = ({ notHome }) => {
       </nav>
       <div
         id="offcanvas"
-        className={`transition-transform duration-300 ease-linear bg-gray-900 text-white fixed top-0 left-0 w-10/12 flex flex-col py-8 px-8 sm:hidden gap-y-6 rounded z-[1035] ${
-          isMenuOpen ? "visible translate-x-0" : "translate-x-[100%] invisible"
+        className={`transition-transform duration-300 ease-linear bg-gray-900 text-white fixed top-0 left-0 w-10/12 flex flex-col p-6 sm:hidden gap-y-6 rounded z-[1035] ${
+          isMenuOpen
+            ? "visible translate-x-0 h-screen"
+            : "-translate-x-[100%] invisible"
         }`}
         ref={offcanvasRef}
       >
