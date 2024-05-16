@@ -25,7 +25,7 @@ export interface Props {
   <body>
     <Navbar
       client:load
-      notHome={pathname === "/paket" ||
+      notHome={pathname.includes("/paket") ||
       pathname.includes("/faq") ||
       pathname.includes("/about")
         ? "bg-teal-900 pt-0"
@@ -36,7 +36,7 @@ export interface Props {
         "mt-0",
         {
           "mt-24":
-            pathname === "/paket" ||
+            pathname.includes("/paket") ||
             pathname.includes("/faq") ||
             pathname.includes("/about"),
         },

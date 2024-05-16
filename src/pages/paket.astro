@@ -1,47 +1,67 @@
 ---
 import Card from "../components/Card.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+
+const dataPaket = [
+  {
+    title: "Bromo Midnight Trip",
+    link: "/paket/bromo",
+    price: "285.000",
+    gmbr: "/images/bromo1.jpg",
+    durasi: 1,
+    jenistrip: "Private",
+  },
+  {
+    title: "Air Terjun Tumpak Sewu",
+    link: "/paket/tumpaksewu",
+    price: "250.000",
+    gmbr: "/images/tumpaksewu.jpg",
+    durasi: 1,
+    jenistrip: "Private",
+  },
+  {
+    title: "Bromo Midnight dan Tumpak Sewu",
+    link: "/paket/tumpakbromo",
+    price: "450.000",
+    gmbr: "/images/bromo2.jpg",
+    durasi: 2,
+    jenistrip: "Private",
+  },
+  {
+    title: "Explore Kawah Ijen",
+    link: "/paket/ijen",
+    price: "375.000",
+    gmbr: "/images/ijen1.jpg",
+    durasi: 1,
+    jenistrip: "Private",
+  },
+  {
+    title: "Kawah Ijen dan Taman Nasional Baluran",
+    link: "/paket/ijenbaluran",
+    price: "450.000",
+    gmbr: "/images/baluran.jpg",
+    durasi: 1,
+    jenistrip: "Open",
+  },
+];
 ---
 
 <MainLayout title="Paket">
   <p class="text-3xl font-semibold text-center mb-4">Paket Trip</p>
   <section class="container">
     <div class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-3">
-      <Card
-        link="/paket/bromo"
-        Img="/images/bromo1.jpg"
-        title="Bromo Midnight Trip"
-        price="285.000"
-        durasi={1}
-      />
-      <Card
-        link="/paket/tumpaksewu"
-        Img="/images/tumpaksewu.jpg"
-        title="Air Terjun Tumpak Sewu"
-        price="285.000"
-        durasi={1}
-      />
-      <Card
-        link="/paket/tumpakbromo"
-        Img="/images/bromo2.jpg"
-        title="Tumpak Sewu & Bromo Midnight"
-        price="285.000"
-        durasi={2}
-      />
-      <Card
-        link="/paket/ijen"
-        Img="/images/ijen1.jpg"
-        title="Explore Kawah Ijen"
-        price="285.000"
-        durasi={1}
-      />
-      <Card
-        link="/paket/ijenbaluran"
-        Img="/images/baluran.jpg"
-        title="TN Baluran & Kawah Ijen"
-        price="285.000"
-        durasi={2}
-      />
+      {
+        dataPaket.map((data) => (
+          <Card
+            title={data.title}
+            link={data.link}
+            price={data.price}
+            Img={data.gmbr}
+            durasi={data.durasi}
+            jenistrip={data.jenistrip}
+          />
+        ))
+      }
     </div>
   </section>
 </MainLayout>

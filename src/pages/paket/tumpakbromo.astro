@@ -1,0 +1,86 @@
+---
+import PaketLayout from "../../layouts/PaketLayout.astro";
+---
+
+<PaketLayout
+  title={"Bromo Midnight dan Tumpak Sewu"}
+  bgImg={"bg-[url('/images/tumpaksewu.jpg')]"}
+  durasi={"1"}
+  highlight={{
+    mulai: "Hari 1, 04.00",
+    selesai: "Hari 2, 12.00",
+    jenistrip: "",
+    mepo: "Malang Kota",
+  }}
+  descs={[
+    "Paket Bromo Midnight Trip dan Tumpak Sewu akan membawa kamu mengunjungi dan menikmati kemegahan Air Terjun Tumpak Sewu di Lumajang dan beriwsata di Gunung Bromo melalui Malang.",
+    "Note: Tidak disarankan untuk anak usia di bawah 10 tahun dan orang tua di atas 60 tahun.",
+  ]}
+  destinasi={[
+    "Air Terjun Tumpak Sewu",
+    "Goa Tetes",
+    "Goa Bidadari",
+    "Telaga Biru",
+    "Sunrise View Point",
+    "Bukit Widodaren",
+    "Kawah Bromo",
+    "Pura Luhur Poten",
+    "Pasir Berbisik",
+    "Savana",
+    "Bukit Teletubbies",
+  ]}
+  fasilitas={{
+    inklud: [
+      "Jeep Bromo 4x4 Hardtop",
+      "Transport City Car",
+      "Guide lokal Tumpak Sewu",
+      "Tiket Masuk Wisata",
+      "Snack & Mineral Water",
+      "Personal Photographer (untuk paket dokumentasi)",
+      "100 HQ Edited Photos (untuk paket dokumentasi)",
+    ],
+    exclude: [
+      "Transportasi dari dan/atau menuju Kota Malang",
+      "Penginapan (Hotel / Homestay)",
+      "Pengeluaran pribadi",
+    ],
+  }}
+  harga={[
+    { pax: "6", price: "450.000" },
+    { pax: "5", price: "520.000" },
+    { pax: "4", price: "625.000" },
+    { pax: "3", price: "799.000" },
+    { pax: "2", price: "1.149.000" },
+  ]}
+  itin={[
+    {
+      title: "Day 1 - Tumpak Sewu",
+      content2: [
+        "04.00 Penjemputan peserta trip di Kota Malang",
+        "04.30 Perjalanan menuju Air Terjun Tumpak Sewu - Lumajang",
+        "06.00 Tiba di rest area Tumpak Sewu, persiapan trekking",
+        "06.15 Explore area Air Terjun Tumpak Sewu hingga aliran sungai",
+        "09.00 Explore area Goa Tetes",
+        "10.00 Perjalanan kembali menuju rest area",
+        "11.00 Tiba di reset area, istirahat dan bersih diri",
+        "14.00 Perjalanan kembali ke Malang",
+        "16.30 Tiba di Kota Malang, persiapan Bromo Trip",
+      ],
+    },
+    {
+      title: "Day 2 - Bromo Midnight",
+      content2: [
+        "00.01 Penjemputan peserta trip di Kota Malang",
+        "00.30 Perjalanan menuju Bromo dengan mobil hardtop 4x4",
+        "03.00 Tiba di Sunrise View Point, istirahat dan adaptasi suhu udara",
+        "04.30 Menikmati matahari terbit di Sunrise View Point",
+        "06.00 Menuju Bukit Widodaren",
+        "07.00 Menuju Kawah Bromo & Pura Luhur Poten",
+        "08.00 Menuju Lautan Pasir",
+        "09.00 Menuju Savanna dan Bukit Teletubbies",
+        "10.00 Explore Bromo berakhir, perjalanan kembali menuju Malang",
+        "12.00 Tiba di Kota Malang, perjalanan berakhir. Sayonara !",
+      ],
+    },
+  ]}
+/>
