@@ -52,19 +52,6 @@ const Navbar = ({ notHome }) => {
     };
   }, []);
 
-  // const [notHome, setNotHome] = useState("");
-  // const location = useLocation();
-  // useEffect(() => {
-  //   const currentPath = location.pathname;
-  //   if (
-  //     currentPath === "/paket" ||
-  //     currentPath.includes("/faq") ||
-  //     currentPath.includes("/about")
-  //   ) {
-  //     setNotHome("bg-teal-900");
-  //   }
-  // }, [location]);
-
   const backCol = scrollPosition ? "bg-teal-900" : "pt-6";
 
   return (

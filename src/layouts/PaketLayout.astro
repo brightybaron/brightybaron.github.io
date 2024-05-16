@@ -13,7 +13,7 @@ const {
   title,
   bgImg,
   durasi,
-  waktu,
+  highlight,
   descs,
   destinasi,
   fasilitas,
@@ -24,7 +24,12 @@ export interface Props {
   title: string;
   bgImg: string;
   durasi: string;
-  waktu: { mulai: string; selesai: string };
+  highlight: {
+    mulai: string;
+    selesai: string;
+    jenistrip: string;
+    mepo: string;
+  };
   descs: string[];
   destinasi: string[];
   fasilitas: {
@@ -49,7 +54,7 @@ export interface Props {
     <!-- Tabs -->
     <div class="mt-4 border-t border-black py-4 min-h-[250px]">
       <div id="highlight" class="tab-pane active">
-        <TabHighlight waktu={waktu}>
+        <TabHighlight highlight={highlight}>
           {
             descs
               ? descs.map((desc) => (

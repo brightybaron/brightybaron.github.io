@@ -1,0 +1,60 @@
+---
+import PaketLayout from "../../layouts/PaketLayout.astro";
+---
+
+<PaketLayout
+  title="Kawah Ijen dan Baluran"
+  bgImg="bg-[url('/images/baluran.jpg')]"
+  durasi="1"
+  highlight={{
+    mulai: "01.00",
+    selesai: "16.30",
+    jenistrip: "Open Trip",
+    mepo: "Banyuwangi Kota",
+  }}
+  descs={[""]}
+  destinasi={[
+    "Kawah Ijen",
+    "Blue Fire",
+    "Sunrise View Point",
+    "Taman Nasional Baluran",
+    "Pantai Bama",
+  ]}
+  fasilitas={{
+    inklud: [
+      "Trasnportasi selama trip",
+      "Tour Guide Ijen",
+      "Asuransi",
+      "Tiket masuk wisata",
+      "Masker gas",
+      "Air Mineral",
+    ],
+    exclude: [
+      "Transportasi dari dan/atau menuju Banyuwangi",
+      "Penginapan (Hotel / Homestay)",
+      "Pengeluaran pribadi",
+    ],
+  }}
+  harga={[{ pax: "1", price: "450.000" }]}
+  itin={[
+    {
+      title: "Day 1",
+      content2: [
+        "01.00 Penjemputan pesertadi hotel atau meeting point yang disepakati",
+        "01.15 Perjalanan menuju Paltuding",
+        "03.00 Tiba di Paltuding untuk persiapan pendakian dan registrasi",
+        "04.00 Pendakian menuju Puncak Ijen",
+        "05.00 Tiba di Puncak Ijen dan Explore Kawah Ijen (Blue Fire, kawah dan sunrise",
+        "06.30 Turun kembali menuju Paltuding",
+        "08.00 Menuju penginapan untuk persiapan",
+        "10.00 Penjemputan peserta, kemudian melanjutkan perjalanan menuju Taman Nasional Baluran",
+        "11.50 Memasuki Taman Nasional Baluran",
+        "12.30 Explore Savana Bekol",
+        "13.00 Menuju Pantai Bama",
+        "13.30 Explore Pantai Bama",
+        "14.30 Kembali menuju meeting point/Banyuwangi Kota",
+        "16.30 Tiba di meeting point/Banyuwangi Kota. Perjalanan berakhir.",
+      ],
+    },
+  ]}
+/>

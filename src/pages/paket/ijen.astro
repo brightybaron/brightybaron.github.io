@@ -1,0 +1,63 @@
+---
+import PaketLayout from "../../layouts/PaketLayout.astro";
+---
+
+<PaketLayout
+  title="Explore Kawah Ijen"
+  bgImg="bg-[url('/images/ijen1.jpg')]"
+  durasi="1"
+  highlight={{
+    mulai: "23.30",
+    selesai: "10.30",
+    jenistrip: "",
+    mepo: "Banyuwangi Kota",
+  }}
+  descs={[
+    "Note: Tidak disarankan untuk anak usia di bawah 10 tahun dan orang tua di atas 60 tahun.",
+  ]}
+  destinasi={[
+    "Kawah Ijen",
+    "Blue Fire",
+    "Sunrise View Point",
+    "Air Terjun Jagir",
+  ]}
+  ]}
+  fasilitas={{
+    inklud: [
+      "Private trasnportation",
+      "Tour Guide",
+      "Dokumentasi",
+      "Tiket masuk wisata",
+      "Masker gas",
+      "Air Mineral",
+    ],
+    exclude: [
+      "Transportasi dari dan/atau menuju Banyuwangi",
+      "Penginapan (Hotel / Homestay)",
+      "Pengeluaran pribadi",
+    ],
+  }}
+  harga={[
+    { pax: "6", price: "375.000" },
+    { pax: "5", price: "400.000" },
+    { pax: "4", price: "425.000" },
+    { pax: "3", price: "475.000" },
+    { pax: "2", price: "675.000" },
+  ]}
+  itin={[
+    {
+      title: "Day 1",
+      content2: [
+        "23.30 Penjemputan pesertadi hotel atau meeting point yang disepakati",
+        "00.00 Perjalanan menuju Paltuding",
+        "01.30 Pendakian menuju Puncak Ijen",
+        "03.30 Tiba di Puncak Ijen dan Explore Kawah Ijen (Blue Fire, kawah dan sunrise",
+        "06.30 Turun kembali menuju Paltuding",
+        "07.30 Perjalanan menuju  Air Terjun Jagir",
+        "08.00 Explore Air Terjun Jagir",
+        "09.00 Perjalanan kembali menuju hotel atau meeting point",
+        "10.30 Tiba di hotel atau meeting point. Perjalanan berakhir.",
+      ],
+    },
+  ]}
+/>

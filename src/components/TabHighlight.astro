@@ -1,7 +1,12 @@
 ---
-const { waktu } = Astro.props;
+const { highlight } = Astro.props;
 export interface Props {
-  waktu: { mulai: string; selesai: string };
+  highlight: {
+    mulai: string;
+    selesai: string;
+    jenistrip: string;
+    mepo: string;
+  };
 }
 ---
 
@@ -13,10 +18,10 @@ export interface Props {
     <p>Waktu Selesai</p>
   </div>
   <div class="sm:col-span-3 col-span-1 w-full">
-    <p>: Private Trip</p>
-    <p>: Malang Kota</p>
-    <p>: {waktu.mulai} WIB</p>
-    <p>: {waktu.selesai} WIB</p>
+    <p>: {highlight.jenistrip || "Private Trip"}</p>
+    <p>: {highlight.mepo || "Malang Kota"}</p>
+    <p>: {highlight.mulai} WIB</p>
+    <p>: {highlight.selesai} WIB</p>
   </div>
 </div>
 <div class="mt-4">
