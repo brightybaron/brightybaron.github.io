@@ -23,6 +23,10 @@ const Navbar = ({ notHome, ptNotHome }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const offcanvasRef = useRef(null);
 
+  const handleClick = () => {
+    setIsMenuOpen((prevIsMenuOpen) => !prevIsMenuOpen);
+  };
+
   // close offcanvas when clicking outside
   useEffect(() => {
     function handleClickOutside(event) {
@@ -37,10 +41,6 @@ const Navbar = ({ notHome, ptNotHome }) => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [offcanvasRef]);
-
-  const handleClick = () => {
-    setIsMenuOpen((prevIsMenuOpen) => !prevIsMenuOpen);
-  };
 
   // change navbar color when scrolling
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -57,14 +57,14 @@ const Navbar = ({ notHome, ptNotHome }) => {
   }, []);
 
   const padTop = scrollPosition ? "" : ptNotHome;
-  const backCol = scrollPosition ? "bg-teal-900" : "";
+  const bgScroll = scrollPosition ? "bg-teal-900" : "";
 
   return (
     <>
       <nav
-        className={`fixed top-0 z-[1030] w-full ${backCol} ${notHome} ${padTop} transition-all duration-300`}
+        className={`fixed top-0 z-[1030] w-full ${bgScroll} ${notHome} ${padTop} transition-all duration-300`}
       >
-        <div className="container  md:px-16">
+        <div className="container md:px-16">
           <div className="flex items-center justify-between h-16">
             <div className="flex-shrink-0">
               <a
