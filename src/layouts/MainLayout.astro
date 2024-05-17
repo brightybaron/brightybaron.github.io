@@ -3,6 +3,9 @@ import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.astro";
 
 const { pathname } = Astro.url;
+const paketPage = pathname === "/paket";
+const aboutPage = pathname.includes("/about");
+const faqPage = pathname.includes("/faq");
 
 const { title } = Astro.props;
 export interface Props {
@@ -25,16 +28,8 @@ export interface Props {
   <body>
     <Navbar
       client:load
-      notHome={pathname === "/paket" ||
-      pathname.includes("/faq") ||
-      pathname.includes("/about")
-        ? "bg-teal-900"
-        : ""}
-      ptNotHome={pathname === "/paket" ||
-      pathname.includes("/about") ||
-      pathname.includes("/faq")
-        ? ""
-        : "pt-6"}
+      notHome={paketPage || aboutPage || faqPage ? "bg-teal-900" : ""}
+      ptNotHome={paketPage || aboutPage || faqPage ? "" : "pt-6"}
     />
     <div
       class:list={[
