@@ -25,14 +25,14 @@ export interface Props {
   <body>
     <Navbar
       client:load
-      notHome={pathname.includes("/faq") ||
-      pathname.includes("/about") ||
-      pathname === "/paket"
+      notHome={pathname === "/paket" ||
+      pathname.includes("/faq") ||
+      pathname.includes("/about")
         ? "bg-teal-900"
         : ""}
-      ptNotHome={pathname.includes("/about") ||
-      pathname.includes("/faq") ||
-      pathname === "/paket"
+      ptNotHome={pathname === "/paket" ||
+      pathname.includes("/about") ||
+      pathname.includes("/faq")
         ? ""
         : "pt-6"}
     />
@@ -40,7 +40,10 @@ export interface Props {
       class:list={[
         "mt-0",
         {
-          "mt-24": pathname.includes("/faq") || pathname.includes("/about"),
+          "mt-24":
+            pathname === "/paket" ||
+            pathname.includes("/faq") ||
+            pathname.includes("/about"),
         },
       ]}
     >
