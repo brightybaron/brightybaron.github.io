@@ -11,7 +11,11 @@ import MainLayout from "../layouts/MainLayout.astro";
     <div class="relative sm:top-[30%] top-1/4 left-[10%] w-fit text-stone-200">
       <p class="mb-0">Welcome to</p>
       <p class="font-bold text-2xl mb-3">Badak Gunung</p>
-      <p class="mb-0">Discover, Book and Enjoy Your Journey</p>
+      <p class="mb-0">
+        <span
+          class="typed"
+          data-typed-items="Discover, Book and Enjoy Your Journey"></span>
+      </p>
     </div>
   </section>
   <section class="container py-8">
@@ -72,3 +76,19 @@ import MainLayout from "../layouts/MainLayout.astro";
     >
   </section>
 </MainLayout>
+
+<script>
+  import Typed from "typed.js";
+  const typed = document.querySelector(".typed");
+  if (typed) {
+    let typedStrings = typed.getAttribute("data-typed-items");
+    // typedStrings = typedStrings.split(",");
+    new Typed(".typed", {
+      strings: typedStrings.split(null),
+      loop: true,
+      typeSpeed: 50,
+      backSpeed: 50,
+      backDelay: 500,
+    });
+  }
+</script>
