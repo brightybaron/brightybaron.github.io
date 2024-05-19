@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.astro";
 
 const { pathname } = Astro.url;
-const paketPage = pathname === "/paket";
+const paketPage = pathname.includes("/paket");
 const aboutPage = pathname.includes("/about");
 const faqPage = pathname.includes("/faq");
 
