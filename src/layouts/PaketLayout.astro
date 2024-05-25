@@ -8,6 +8,7 @@ import TabHighlight from "../components/TabHighlight.astro";
 import TabDestinasi from "../components/TabDestinasi.astro";
 import TabFasilitas from "../components/TabFasilitas.astro";
 import TabHarga from "../components/TabHarga.astro";
+import Lightbox from "../components/Lightbox";
 
 const {
   title,
@@ -19,7 +20,9 @@ const {
   fasilitas,
   harga,
   itin,
+  images,
 } = Astro.props;
+
 export interface Props {
   title: string;
   bgImg: string;
@@ -44,6 +47,7 @@ export interface Props {
     title: string;
     content2: string[];
   }[];
+  images: any[];
 }
 ---
 
@@ -87,7 +91,14 @@ export interface Props {
           kondisi yang ada.
         </p>
       </div>
-      <div id="galeri" class="tab-pane">Galeri</div>
+      <div id="galeri" class="tab-pane">
+        <div class="grid sm:grid-cols-4 grid-cols-2 gap-4">
+          <Lightbox
+            client:load
+            images={images || [{ src: "/images/hero1.png" }]}
+          />
+        </div>
+      </div>
     </div>
   </Navtab>
 </MainLayout>
