@@ -24,8 +24,7 @@ const Lightbox = ({ images }) => {
   const handleOverlayClick = (event) => {
     if (
       !event.target.closest(".lightbox-container") &&
-      !event.target.closest(".bi-chevron-left") &&
-      !event.target.closest(".bi-chevron-right")
+      !event.target.closest("button")
     ) {
       closeLightbox();
     }
@@ -49,9 +48,9 @@ const Lightbox = ({ images }) => {
           className="lightbox-overlay fixed top-0 left-0 w-full h-screen bg-[rgba(0,0,0,0.8)] flex justify-center items-center z-[1056]"
           onClick={handleOverlayClick}
         >
-          <div className="lightbox-container p-5 rounded-xl shadow w-[80%] max-w-[800px] my-8 mx-auto">
+          <div className="lightbox-container p-5 rounded-xl shadow w-[90%] max-w-[800px] my-8 mx-auto">
             <img
-              className="w-full h-full object-contain rounded"
+              className="w-full h-screen object-contain"
               src={images[currentIndex].src}
               alt={images[currentIndex].src + " gambar"}
             />
