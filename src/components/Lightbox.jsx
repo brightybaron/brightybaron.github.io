@@ -57,7 +57,7 @@ const Lightbox = ({ images }) => {
           </div>
           <div className="absolute w-full h-screen">
             <button
-              className="bg-[#333333] text-white border-none py-2 px-4 cursor-pointer hover:bg-[#444444] active:bg-[#555555] absolute z-[1057] top-3 right-3 rounded"
+              className="bg-[#333333] text-white border-none py-2 px-4 cursor-pointer hover:bg-[#444444] active:bg-[#555555] absolute  top-3 right-3 rounded"
               onClick={closeLightbox}
             >
               Close
