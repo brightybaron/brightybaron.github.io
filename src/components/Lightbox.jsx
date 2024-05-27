@@ -23,7 +23,7 @@ const Lightbox = ({ images }) => {
 
   const handleOverlayClick = (event) => {
     if (
-      !event.target.closest(".lightbox-container") &&
+      !event.target.closest(".lightbox-overlay") &&
       !event.target.closest("button")
     ) {
       closeLightbox();
