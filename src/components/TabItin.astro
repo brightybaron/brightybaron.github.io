@@ -1,0 +1,16 @@
+---
+import Accordion from "./Accordion";
+const { itin } = Astro.props;
+export interface Props {
+  itin: {
+    title: string;
+    content2: string[];
+  }[];
+}
+---
+
+<Accordion client:load items={itin} />
+<p class="text-sm text-end italic mt-4">
+  *Hanya sebagai acuan dasar, dalam pelaksanaanya menyesuaikan dengan kondisi
+  yang ada.
+</p>

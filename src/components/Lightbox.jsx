@@ -57,13 +57,13 @@ const Lightbox = ({ images }) => {
           </div>
           <div className="absolute w-full h-screen">
             <button
-              className="bg-[#333333] text-white border-none py-2 px-4 cursor-pointer hover:bg-[#444444] active:bg-[#555555] absolute  top-3 right-3 rounded"
+              className="bg-[#333333] text-white border-none py-2 px-4 cursor-pointer hover:bg-[#444444] active:bg-[#555555] absolute  top-3 right-3 rounded-md"
               onClick={closeLightbox}
             >
               Close
             </button>
             <button
-              className="bg-[#333333] text-white border-none py-2 px-4 cursor-pointer hover:bg-[#444444] active:bg-[#555555] absolute top-[47%] sm:left-8 left-0 rounded"
+              className="bg-[#333333] text-white border-none py-2 px-4 cursor-pointer hover:bg-[#444444] active:bg-[#555555] absolute top-[47%] sm:left-8 left-0 rounded-md"
               onClick={gotoPrevious}
             >
               <i className="bi bi-chevron-left sm:text-4xl text-2xl"></i>

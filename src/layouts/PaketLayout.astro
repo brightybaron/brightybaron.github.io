@@ -3,7 +3,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 import PaketHero from "../components/PaketHero.astro";
 import PaketTitle from "../components/PaketTitle.astro";
 import Navtab from "../components/Navtab.astro";
-import Accordion from "../components/Accordion";
+import TabItin from "../components/TabItin.astro";
 import TabHighlight from "../components/TabHighlight.astro";
 import TabDestinasi from "../components/TabDestinasi.astro";
 import TabFasilitas from "../components/TabFasilitas.astro";
@@ -88,18 +88,11 @@ export interface Props {
         <TabHarga harga={harga} />
       </div>
       <div id="itinerary" class="tab-pane">
-        <Accordion client:load items={itin} />
-        <p class="text-sm text-end italic mt-4">
-          *Hanya sebagai acuan dasar, dalam pelaksanaanya menyesuaikan dengan
-          kondisi yang ada.
-        </p>
+        <TabItin itin={itin} />
       </div>
       <div id="galeri" class="tab-pane">
         <div class="grid sm:grid-cols-4 grid-cols-2 gap-4">
-          <Lightbox
-            client:load
-            images={images || [{ src: "/images/hero1.png" }]}
-          />
+          <Lightbox client:load images={images} />
         </div>
       </div>
     </div>
