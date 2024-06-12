@@ -1,72 +1,17 @@
 ---
 import PaketLayout from "../../layouts/PaketLayout.astro";
+const data = (await import("../../data/content.json")).default[0];
 ---
 
 <PaketLayout
-  title="Bromo Midnight Trip"
-  bgImg="bg-[url('/images/bromo1.jpg')]"
-  durasi="1"
-  highlight={{
-    mulai: "23.30",
-    selesai: "10.30",
-    jenistrip: "Private Trip",
-    mepo: "Malang Kota",
-  }}
-  descs={[
-    "Exploring the fascinating landscape of Mountain Bromo by riding 4x4 vehicle. Take amount of pictures with breathtaking views in the background.",
-    "Kamu dapat menikmati dan mengeksplorasi keindahan Gunung Bromo yang terkenal di Jawa Timur dengan mengikuti Paket Trip Wisata Gunung Bromo yang telah kami sediakan.",
-    "Paket Trip Wisata Gunung Bromo ini cocok untuk kamu yang ingin menikmati keindahan Gunung Bromo dengan privasi yang terjaga.",
-  ]}
-  destinasi={[
-    "Sunrise View Point",
-    "Bukit Widodaren",
-    "Kawah Bromo",
-    "Pura Luhur Poten",
-    "Pasir Berbisik",
-    "Savana",
-    "Bukit Teletubbies",
-  ]}
-  fasilitas={{
-    inklud: [
-      "Jeep Bromo 4x4 Hardtop",
-      "Tiket masuk Bromo",
-      "Snack dan air mineral",
-    ],
-    exclude: [
-      "Transportasi dari dan/atau menuju Kota Malang",
-      "Penginapan (Hotel / Homestay)",
-      "Pengeluaran pribadi",
-      "Sewa kuda / jaket di Bromo",
-    ],
-  }}
-  harga={[
-    { pax: "6", price: "285.000" },
-    { pax: "5", price: "330.000" },
-    { pax: "4", price: "400.000" },
-    { pax: "3", price: "515.000" },
-    { pax: "2", price: "750.000" },
-  ]}
-  itin={[
-    {
-      title: "Day 1",
-      content2: [
-        "00.01 Penjemputan peserta trip di Kota Malang",
-        "00.30 Perjalanan menuju Bromo dengan mobil hardtop 4x4",
-        "03.00 Tiba di Sunrise View Point, istirahat dan adaptasi suhu udara",
-        "04.30 Menikmati matahari terbit di Sunrise View Point",
-        "06.00 Menuju Bukit Widodaren",
-        "07.00 Menuju Kawah Bromo & Pura Luhur Poten",
-        "08.00 Menuju Lautan Pasir",
-        "09.00 Menuju Savanna dan Bukit Teletubbies",
-        "10.00 Explore Bromo berakhir, perjalanan kembali menuju Malang",
-        "12.00 Tiba di Kota Malang, perjalanan berakhir. Sayonara !",
-      ],
-    },
-  ]}
-  images={[
-    { src: "/images/bromo1.jpg" },
-    { src: "/images/bromo2.jpg" },
-    { src: "/images/bromo3.jpg" },
-    { src: "/images/bromo4.jpg" },
-  ]}
+  title={data.title}
+  bgImg={data.bgImg}
+  durasi={data.durasi}
+  highlight={data.highlight}
+  descs={data.descs}
+  destinasi={data.destinasi}
+  fasilitas={data.fasilitas}
+  harga={data.harga}
+  itin={data.itin}
+  images={data.images}
 />
